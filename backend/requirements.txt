@@ -26,8 +26,8 @@ pytest==7.4.3
 pytest-asyncio==0.21.1
 httpx==0.25.1
 
-# TraceX dependencies (placeholder - will be replaced with actual TraceX package)
-# tracex-sdk==1.0.0  # When available
+# [NEW_NAME] dependencies (placeholder - will be replaced with actual [NEW_NAME] package)
+# new-name-sdk==1.0.0  # When available
 
 # For demo data generation
 faker==19.6.2

@@ -60,7 +60,7 @@ async def health_check():
         "version": settings.api_version,
         "timestamp": time.time(),
         "demo_mode": settings.demo_mode,
-        "tracex_enabled": settings.tracex_enabled
+        "new_name_enabled": settings.new_name_enabled
     }
 
 
@@ -72,9 +72,9 @@ async def ingest_message(request: PipelineRequest):
     Steps:
     1. Ingest suspicious message
     2. Extract scam signals (NLP features/patterns)
-    3. Evidence correlation via TraceX
-    4. Campaign reconstruction via TraceX  
-    5. Counter-evidence check via TraceX
+    3. Evidence correlation via [NEW_NAME]
+    4. Campaign reconstruction via [NEW_NAME]  
+    5. Counter-evidence check via [NEW_NAME]
     6. Claim verification
     7. Generate Human Review Brief
     """
@@ -145,7 +145,7 @@ if __name__ == "__main__":
 
 
 # ============================================================================
-# TRACEX-INSPIRED ENDPOINTS: Evidence Integrity & Truth Gate
+# [NEW_NAME] INTEGRITY ENDPOINTS: Evidence Integrity & Truth Gate
 # ============================================================================
 
 @app.get("/integrity/verify")
@@ -153,7 +153,7 @@ async def verify_evidence_integrity():
     """
     Verify the complete evidence chain integrity.
     
-    TraceX-inspired: Re-hash every record and check chain linkage.
+    Re-hash every record and check chain linkage.
     Any tampering breaks the chain at that point.
     """
     try:
@@ -162,8 +162,8 @@ async def verify_evidence_integrity():
         return {
             "integrity": integrity_result,
             "chain_statistics": evidence_chain.get_chain_statistics(),
-            "tracex_feature": "evidence_hash_chain",
-            "note": "This is TraceX-style hash-linked integrity verification"
+            "engine_feature": "evidence_hash_chain",
+            "note": "Hash-linked integrity verification"
         }
     except Exception as e:
         raise HTTPException(
@@ -179,7 +179,7 @@ async def run_tamper_drill(
     new_value: str = "TAMPERED"
 ):
     """
-    Run the TraceX-style tamper drill.
+    Run the integrity tamper drill.
     
     Intentionally tampers with a record to demonstrate how the chain
     breaks. This proves the integrity system works.
@@ -195,7 +195,7 @@ async def run_tamper_drill(
         return {
             "tamper_drill": drill_result,
             "demonstration": "Watch how tampering breaks the chain",
-            "tracex_feature": "integrity_demonstration",
+            "engine_feature": "integrity_demonstration",
             "note": "Chain has been restored after demonstration"
         }
     except Exception as e:
@@ -215,7 +215,7 @@ async def get_evidence_chain():
     try:
         return {
             "chain": evidence_chain.export_chain(),
-            "tracex_feature": "evidence_chain_export",
+            "engine_feature": "evidence_chain_export",
             "note": "Each record is SHA-256 hashed and linked to previous"
         }
     except Exception as e:
@@ -234,7 +234,7 @@ async def verify_claim(
     """
     Verify a claim through the Truth Gate.
     
-    TraceX principle: "Every factual sentence is torn apart: each cited
+    Core principle: "Every factual sentence is torn apart: each cited
     record is re-resolved, re-hashed, and every figure checked against the
     payload. A fabricated citation is caught by arithmetic."
     
@@ -252,7 +252,7 @@ async def verify_claim(
         
         return {
             "verification": verification,
-            "tracex_feature": "truth_gate",
+            "engine_feature": "truth_gate",
             "principle": "Unprovable claims do not ship",
             "note": "Claims verified against hashed evidence - fabrications caught by arithmetic"
         }
@@ -273,7 +273,7 @@ async def verify_numerical_claim(
     """
     Verify a specific numerical claim.
     
-    This is the "arithmetic catches lies" feature from TraceX.
+    This is the "arithmetic catches lies" feature of the verification engine.
     
     Args:
         claimed_value: The number being claimed
@@ -291,7 +291,7 @@ async def verify_numerical_claim(
         
         return {
             "verification": verification,
-            "tracex_feature": "arithmetic_verification",
+            "engine_feature": "arithmetic_verification",
             "note": "Numerical claims verified by arithmetic - no model can argue with math"
         }
     except Exception as e:
@@ -301,15 +301,13 @@ async def verify_numerical_claim(
         )
 
 
-@app.get("/tracex-features")
-async def list_tracex_features():
+@app.get("/engine-features")
+async def list_engine_features():
     """
-    List all TraceX-inspired features implemented in AegisNet.
-    
-    Shows how AegisNet has adopted TraceX's excellence.
+    List all evidence engine features implemented in AegisNet.
     """
     return {
-        "tracex_features": {
+        "engine_features": {
             "evidence_hash_chain": {
                 "status": "implemented",
                 "description": "SHA-256 hash-linked evidence chain",
@@ -331,12 +329,12 @@ async def list_tracex_features():
                 "note": "No model can argue with arithmetic"
             }
         },
-        "tracex_principles": [
+        "engine_principles": [
             "Evidence is hash-chained",
             "Scores are calibrated, not vibes",
             "Agents propose. Humans decide.",
             "Unprovable claims do not ship"
         ],
-        "inspiration": "TraceX - Evidence-grounded AI for financial cybercrime investigation",
-        "note": "AegisNet implements TraceX's integrity guarantees for scam intelligence"
+        "architecture": "[NEW_NAME] - Evidence-grounded AI for cybercrime intelligence",
+        "note": "AegisNet implements strict integrity guarantees for scam intelligence"
     }

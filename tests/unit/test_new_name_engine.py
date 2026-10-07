@@ -1,17 +1,17 @@
-"""Unit tests for TraceX engine."""
+"""Unit tests for [NEW_NAME] engine."""
 
 import pytest
 from datetime import datetime
-from backend.services.tracex_engine import TraceXEngine
+from backend.services.new_name_engine import NewNameEngine
 
 
-class TestTraceXEngine:
-    """Test suite for TraceX engine."""
+class TestNewNameEngine:
+    """Test suite for [NEW_NAME] engine."""
     
     @pytest.fixture
-    def tracex(self):
-        """Create a TraceX engine instance."""
-        return TraceXEngine()
+    def engine(self):
+        """Create a [NEW_NAME] engine instance."""
+        return NewNameEngine()
     
     @pytest.fixture
     def sample_signals(self):
@@ -49,9 +49,9 @@ class TestTraceXEngine:
             "confidence": 0.7
         }
     
-    def test_correlate_signals_returns_graph_structure(self, tracex, sample_signals):
+    def test_correlate_signals_returns_graph_structure(self, engine, sample_signals):
         """Test that correlate_signals returns proper graph structure."""
-        result = tracex.correlate_signals(sample_signals)
+        result = engine.correlate_signals(sample_signals)
         
         # Check basic structure
         assert "nodes" in result
@@ -80,21 +80,21 @@ class TestTraceXEngine:
         assert meta["evidence_count"] == len(evidence_nodes)
         assert "correlation_method" in meta
     
-    def test_correlate_signals_empty_input(self, tracex):
+    def test_correlate_signals_empty_input(self, engine):
         """Test correlate_signals with empty input."""
-        result = tracex.correlate_signals([])
+        result = engine.correlate_signals([])
         
         assert result["nodes"] == []
         assert result["edges"] == []
         assert "note" in result["meta"]
     
-    def test_build_campaign_graph_returns_campaigns(self, tracex, sample_signals):
+    def test_build_campaign_graph_returns_campaigns(self, engine, sample_signals):
         """Test that build_campaign_graph returns campaign structures."""
         # First create evidence graph
-        evidence_graph = tracex.correlate_signals(sample_signals)
+        evidence_graph = engine.correlate_signals(sample_signals)
         
         # Then build campaigns
-        campaigns = tracex.build_campaign_graph(sample_signals, evidence_graph)
+        campaigns = engine.build_campaign_graph(sample_signals, evidence_graph)
         
         # Check campaigns structure
         assert isinstance(campaigns, list)
@@ -109,13 +109,13 @@ class TestTraceXEngine:
             # Check confidence range
             assert 0.0 <= campaign["confidence"] <= 1.0
     
-    def test_build_campaign_graph_empty_input(self, tracex):
+    def test_build_campaign_graph_empty_input(self, engine):
         """Test build_campaign_graph with empty input."""
-        campaigns = tracex.build_campaign_graph([], {})
+        campaigns = engine.build_campaign_graph([], {})
         
         assert campaigns == []
     
-    def test_get_counter_evidence_returns_list(self, tracex, sample_claim):
+    def test_get_counter_evidence_returns_list(self, engine, sample_claim):
         """Test that get_counter_evidence returns counter-evidence list."""
         # Create a simple evidence graph
         evidence_graph = {
@@ -127,7 +127,7 @@ class TestTraceXEngine:
             "meta": {}
         }
         
-        counter_evidence = tracex.get_counter_evidence(sample_claim, evidence_graph)
+        counter_evidence = engine.get_counter_evidence(sample_claim, evidence_graph)
         
         # Check structure
         assert isinstance(counter_evidence, list)
@@ -142,7 +142,7 @@ class TestTraceXEngine:
             # Check confidence range
             assert 0.0 <= evidence["confidence"] <= 1.0
     
-    def test_get_counter_evidence_with_scam_indicators(self, tracex):
+    def test_get_counter_evidence_with_scam_indicators(self, engine):
         """Test counter-evidence generation for claims with scam indicators."""
         scam_claim = {
             "text": "URGENT: Click now for free guaranteed money!",
@@ -151,7 +151,7 @@ class TestTraceXEngine:
         }
         
         evidence_graph = {"nodes": [], "edges": [], "meta": {}}
-        counter_evidence = tracex.get_counter_evidence(scam_claim, evidence_graph)
+        counter_evidence = engine.get_counter_evidence(scam_claim, evidence_graph)
         
         assert len(counter_evidence) > 0
         
@@ -160,23 +160,23 @@ class TestTraceXEngine:
                         if "scam indicators" in e.get("summary", "").lower()]
         assert len(scam_evidence) > 0
     
-    def test_evidence_graph_persistence(self, tracex, sample_signals):
+    def test_evidence_graph_persistence(self, engine, sample_signals):
         """Test that evidence graph structure persists between method calls."""
-        evidence_graph = tracex.correlate_signals(sample_signals)
+        evidence_graph = engine.correlate_signals(sample_signals)
         
         # Use the same graph for campaign reconstruction
-        campaigns = tracex.build_campaign_graph(sample_signals, evidence_graph)
+        campaigns = engine.build_campaign_graph(sample_signals, evidence_graph)
         
         # Use the same graph for counter-evidence
         claim = {"text": "Test claim", "source": "test"}
-        counter = tracex.get_counter_evidence(claim, evidence_graph)
+        counter = engine.get_counter_evidence(claim, evidence_graph)
         
         # All should work without errors
         assert "nodes" in evidence_graph
         assert isinstance(campaigns, list)
         assert isinstance(counter, list)
     
-    def test_signal_to_evidence_mapping(self, tracex):
+    def test_signal_to_evidence_mapping(self, engine):
         """Test internal signal to evidence type mapping."""
         # Test mapping for different signal types
         test_cases = [
@@ -193,7 +193,7 @@ class TestTraceXEngine:
             # We need to test the internal method
             # Since it's private, we'll test through public interface
             signals = [{"signal_id": "test", "signal_type": signal_type}]
-            evidence_graph = tracex.correlate_signals(signals)
+            evidence_graph = engine.correlate_signals(signals)
             
             # Check that evidence was created with appropriate type
             evidence_nodes = [n for n in evidence_graph["nodes"] 
@@ -206,7 +206,7 @@ class TestTraceXEngine:
                 if signal_type != "unknown":
                     assert evidence_type == expected_evidence
     
-    def test_signal_to_campaign_mapping(self, tracex):
+    def test_signal_to_campaign_mapping(self, engine):
         """Test internal signal to campaign type mapping."""
         # Test through public interface by creating signals of different types
         test_signals = [
@@ -215,8 +215,8 @@ class TestTraceXEngine:
             {"signal_id": "sig_3", "signal_type": "social_proof"}
         ]
         
-        evidence_graph = tracex.correlate_signals(test_signals)
-        campaigns = tracex.build_campaign_graph(test_signals, evidence_graph)
+        evidence_graph = engine.correlate_signals(test_signals)
+        campaigns = engine.build_campaign_graph(test_signals, evidence_graph)
         
         if campaigns:
             # Check that campaign types are mapped correctly

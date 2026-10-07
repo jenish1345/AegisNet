@@ -8,9 +8,9 @@ FastAPI backend implementing the 7-step AegisNet analysis pipeline:
 
 1. **Ingest suspicious message**
 2. **Extract scam signals** (NLP features/patterns)
-3. **Evidence correlation** via TraceX
-4. **Campaign reconstruction** via TraceX
-5. **Counter-evidence check** via TraceX
+3. **Evidence correlation** via [NEW_NAME]
+4. **Campaign reconstruction** via [NEW_NAME]
+5. **Counter-evidence check** via [NEW_NAME]
 6. **Claim verification**
 7. **Generate Human Review Brief**
 
@@ -98,7 +98,7 @@ backend/
 └── services/
     ├── __init__.py
     ├── pipeline.py     # 7-step pipeline orchestration
-    └── tracex_engine.py # TraceX integration (to be implemented)
+    └── new_name_engine.py # [NEW_NAME] integration (to be implemented)
 ```
 
 ## Data Models
@@ -153,11 +153,11 @@ DATABASE_URL="sqlite:///./aegisnet.db"
 SPACY_MODEL="en_core_web_sm"
 SENTENCE_TRANSFORMER_MODEL="all-MiniLM-L6-v2"
 
-# TraceX Settings
-TRACEX_ENABLED=true
-TRACEX_SIMILARITY_THRESHOLD=0.7
-TRACEX_CLUSTERING_EPSILON=0.5
-TRACEX_MIN_SAMPLES=2
+# [NEW_NAME] Settings
+NEW_NAME_ENABLED=true
+NEW_NAME_SIMILARITY_THRESHOLD=0.7
+NEW_NAME_CLUSTERING_EPSILON=0.5
+NEW_NAME_MIN_SAMPLES=2
 
 # Demo Mode
 DEMO_MODE=true
@@ -166,7 +166,7 @@ SYNTHETIC_DATA_PATH="data/synthetic/"
 
 ## Next Steps
 
-1. **Implement TraceX engine** in `services/tracex_engine.py`
+1. **Implement [NEW_NAME] engine** in `services/new_name_engine.py`
 2. **Add database models** with SQLAlchemy
 3. **Enhance NLP pipeline** with actual spaCy/sentence-transformers
 4. **Create synthetic data generator**
@@ -176,7 +176,7 @@ SYNTHETIC_DATA_PATH="data/synthetic/"
 ## Limitations (Demo Version)
 
 - Currently uses placeholder/rule-based analysis
-- TraceX integration is mocked
+- [NEW_NAME] integration is mocked
 - No persistent database (in-memory only)
 - Basic NLP signal extraction
 - Single-message analysis only

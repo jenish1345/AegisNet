@@ -1,6 +1,6 @@
 """
 Evidence Hash-Chain Implementation
-Directly inspired by TraceX's hash-linked ledger system.
+Cryptographically linked ledger system for tamper-evident data logging.
 
 Every record gets SHA-256 hashed at ingest and linked to previous hash.
 Tamper = chain breaks = instant detection.
@@ -15,7 +15,7 @@ from uuid import uuid4, UUID
 
 class EvidenceChain:
     """
-    Hash-linked evidence chain - TraceX-style integrity guarantee.
+    Hash-linked evidence chain - tamper-evident integrity guarantee.
     
     Each record is SHA-256 hashed and linked to the previous hash,
     creating an append-only chain where any tampering breaks the chain
@@ -157,7 +157,7 @@ class EvidenceChain:
         """
         Intentionally tamper with a record to demonstrate chain breaking.
         
-        This is the TraceX-style tamper drill - allows users to see
+        This is the integrity verification drill - allows users to see
         how the integrity system catches modifications.
         
         Args:

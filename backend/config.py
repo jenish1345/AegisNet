@@ -25,11 +25,11 @@ class Settings(BaseSettings):
     spacy_model: str = "en_core_web_sm"
     sentence_transformer_model: str = "all-MiniLM-L6-v2"
     
-    # TraceX settings (mock for now)
-    tracex_enabled: bool = True
-    tracex_similarity_threshold: float = 0.7
-    tracex_clustering_epsilon: float = 0.5
-    tracex_min_samples: int = 2
+    # [NEW_NAME] settings (mock for now)
+    new_name_enabled: bool = True
+    new_name_similarity_threshold: float = 0.7
+    new_name_clustering_epsilon: float = 0.5
+    new_name_min_samples: int = 2
     
     # Demo settings
     demo_mode: bool = True

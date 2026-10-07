@@ -10,7 +10,7 @@ from models.schemas import (
     MessageCreate, MessageResponse, SignalResponse, EvidenceResponse,
     CampaignResponse, VerificationResultResponse, HumanReviewBriefResponse
 )
-from .tracex_engine import tracex_engine
+from .new_name_engine import new_name_engine
 from .evidence_chain import evidence_chain
 from .truth_gate import TruthGate
 
@@ -51,15 +51,15 @@ class PipelineService:
         signals = await self._extract_signals(message_result)
         self.steps_completed["signal_extraction"] = True
         
-        # Step 3: Evidence correlation (via TraceX)
+        # Step 3: Evidence correlation (via [NEW_NAME])
         evidence = await self._correlate_evidence(signals)
         self.steps_completed["evidence_correlation"] = True
         
-        # Step 4: Campaign reconstruction (via TraceX)
+        # Step 4: Campaign reconstruction (via [NEW_NAME])
         campaigns = await self._reconstruct_campaigns(signals, evidence)
         self.steps_completed["campaign_reconstruction"] = True
         
-        # Step 5: Counter-evidence check (via TraceX)
+        # Step 5: Counter-evidence check (via [NEW_NAME])
         counter_evidence = await self._check_counter_evidence(evidence, campaigns)
         self.steps_completed["counter_evidence_check"] = True
         
@@ -103,7 +103,7 @@ class PipelineService:
             ingestion_timestamp=datetime.utcnow()
         )
         
-        # Add to evidence chain (TraceX-style)
+        # Add to evidence chain ([NEW_NAME]-style)
         evidence_chain.add_record(
             record_type="message",
             payload=message_response.dict(),
@@ -174,19 +174,19 @@ class PipelineService:
         return signals
     
     async def _correlate_evidence(self, signals: list[SignalResponse]) -> list[EvidenceResponse]:
-        """Step 3: Evidence correlation via TraceX."""
+        """Step 3: Evidence correlation via [NEW_NAME]."""
         if not signals:
             return []
         
-        # Convert signals to dict format for TraceX
+        # Convert signals to dict format for [NEW_NAME]
         signal_dicts = []
         for signal in signals:
             signal_dict = signal.dict()
             signal_dict["signal_id"] = str(signal.signal_id)
             signal_dicts.append(signal_dict)
         
-        # Use TraceX engine for evidence correlation
-        evidence_graph = tracex_engine.correlate_signals(signal_dicts)
+        # Use [NEW_NAME] engine for evidence correlation
+        evidence_graph = new_name_engine.correlate_signals(signal_dicts)
         
         # Store evidence graph for later steps
         self._current_evidence_graph = evidence_graph
@@ -199,10 +199,10 @@ class PipelineService:
                     evidence_id=uuid4(),
                     evidence_type=node.get("evidence_type", "linguistic"),
                     content=node.get("data", {}),
-                    source_description=f"TraceX correlation: {node.get('summary', 'Evidence from signal correlation')}",
+                    source_description=f"[NEW_NAME] correlation: {node.get('summary', 'Evidence from signal correlation')}",
                     confidence_score=node.get("confidence", 0.7),
                     collection_timestamp=datetime.utcnow(),
-                    limitations="Generated from mock TraceX correlation engine"
+                    limitations="Generated from mock [NEW_NAME] correlation engine"
                 ))
         
         return evidence_responses
@@ -212,19 +212,19 @@ class PipelineService:
         signals: list[SignalResponse], 
         evidence: list[EvidenceResponse]
     ) -> list[CampaignResponse]:
-        """Step 4: Campaign reconstruction via TraceX."""
+        """Step 4: Campaign reconstruction via [NEW_NAME]."""
         if not signals:
             return []
         
-        # Convert signals to dict format for TraceX
+        # Convert signals to dict format for [NEW_NAME]
         signal_dicts = []
         for signal in signals:
             signal_dict = signal.dict()
             signal_dict["signal_id"] = str(signal.signal_id)
             signal_dicts.append(signal_dict)
         
-        # Use TraceX engine for campaign reconstruction with current evidence graph
-        campaigns = tracex_engine.build_campaign_graph(
+        # Use [NEW_NAME] engine for campaign reconstruction with current evidence graph
+        campaigns = new_name_engine.build_campaign_graph(
             signal_dicts, 
             self._current_evidence_graph or {}
         )
@@ -255,7 +255,7 @@ class PipelineService:
                 temporal_pattern={"duration_hours": 24, "frequency": "ongoing"},
                 primary_tactics=[campaign.get("meta", {}).get("primary_signal_type", "unknown")],
                 status="active",
-                reconstruction_notes=campaign.get("description", "Reconstructed by TraceX engine"),
+                reconstruction_notes=campaign.get("description", "Reconstructed by [NEW_NAME] engine"),
                 first_seen=datetime.utcnow() - timedelta(hours=24),
                 last_seen=datetime.utcnow()
             ))
@@ -267,7 +267,7 @@ class PipelineService:
         evidence: list[EvidenceResponse],
         campaigns: list[CampaignResponse]
     ) -> list[EvidenceResponse]:
-        """Step 5: Counter-evidence check via TraceX."""
+        """Step 5: Counter-evidence check via [NEW_NAME]."""
         if not evidence and not campaigns:
             return []
         
@@ -279,8 +279,8 @@ class PipelineService:
             "context": "Based on signal patterns and evidence correlation"
         }
         
-        # Use TraceX engine for counter-evidence check with current evidence graph
-        counter_evidence_list = tracex_engine.get_counter_evidence(
+        # Use [NEW_NAME] engine for counter-evidence check with current evidence graph
+        counter_evidence_list = new_name_engine.get_counter_evidence(
             sample_claim, 
             self._current_evidence_graph or {}
         )
@@ -299,7 +299,7 @@ class PipelineService:
                 source_description=f"Counter-evidence: {counter.get('summary', '')}",
                 confidence_score=counter.get("confidence", 0.7),
                 collection_timestamp=datetime.utcnow(),
-                limitations="Generated from mock TraceX counter-evidence engine"
+                limitations="Generated from mock [NEW_NAME] counter-evidence engine"
             ))
         
         return counter_responses
@@ -403,7 +403,7 @@ class PipelineService:
             "LIMITATIONS:\n"
             "1. Analysis based on single message only - more data needed for comprehensive assessment\n"
             "2. Demo mode uses basic rule-based analysis, not full AI/ML models\n"
-            "3. TraceX engine integration is implemented but uses placeholder algorithms\n"
+            "3. [NEW_NAME] engine integration is implemented but uses reference algorithms\n"
             "4. Synthetic context not yet implemented in this phase\n"
             "5. Confidence scores are estimates and require human validation\n"
             "6. Evidence graphs are simplified for demo purposes\n\n"

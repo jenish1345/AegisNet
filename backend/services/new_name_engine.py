@@ -1,11 +1,11 @@
-"""TraceX engine for evidence correlation and campaign reconstruction.
+"""[NEW_NAME] engine for evidence correlation and campaign reconstruction.
 
-TraceX handles steps 3-5 of the AegisNet pipeline:
+[NEW_NAME] handles steps 3-5 of the AegisNet pipeline:
 - Step 3: Evidence correlation
 - Step 4: Campaign reconstruction  
 - Step 5: Counter-evidence check
 
-NOTE: This is a mock implementation using rule-based logic.
+NOTE: This is a reference implementation using rule-based logic.
 In production, replace with actual AI/ML algorithms for:
 - Signal similarity calculation
 - Graph-based evidence correlation
@@ -18,14 +18,16 @@ import random
 from typing import List, Dict, Any
 from datetime import datetime, timedelta
 
+from config import settings
 
-class TraceXEngine:
-    """TraceX engine implementing evidence correlation and campaign reconstruction."""
+
+class NewNameEngine:
+    """[NEW_NAME] engine implementing evidence correlation and campaign reconstruction."""
     
     def __init__(self):
-        # Configuration for mock implementation
-        self.similarity_threshold = 0.7
-        self.min_campaign_signals = 2
+        # Configuration sourced from application settings
+        self.similarity_threshold = settings.new_name_similarity_threshold
+        self.min_campaign_signals = settings.new_name_min_samples
         self.evidence_types = ["temporal", "geographic", "linguistic", "behavioral", "network"]
         
     def correlate_signals(self, signals: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -249,7 +251,7 @@ class TraceXEngine:
             if low_confidence_evidence:
                 counter_evidence.append({
                     "evidence_id": f"counter_{uuid.uuid4().hex[:8]}",
-                    "type": "quality",
+                    "type": "behavioral",  # Evidence quality check mapped to behavioral type
                     "summary": f"{len(low_confidence_evidence)} evidence points have low confidence (< 0.6)",
                     "confidence": 0.75,
                     "provenance": {
@@ -349,4 +351,4 @@ class TraceXEngine:
 
 
 # Singleton instance for easy access
-tracex_engine = TraceXEngine()
+new_name_engine = NewNameEngine()

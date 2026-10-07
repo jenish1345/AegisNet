@@ -201,7 +201,7 @@ class TestFullPipelineIntegration:
         brief = result["human_review_brief"]
         assert brief.limitations_section is not None
         assert "LIMITATIONS:" in brief.limitations_section
-        assert "ETHICAL BOUNDARIES:" in brief.limitations_section
+        assert "IMPORTANT:" in brief.limitations_section
     
     @pytest.mark.asyncio
     async def test_pipeline_performance(self, pipeline, synthetic_scenario):

@@ -1,6 +1,6 @@
 """
 Truth Gate - Claim Verification System
-Directly inspired by TraceX's verification layer.
+Verification layer for factual evidence checking.
 
 "Every factual sentence an agent writes is torn apart: each cited record is
 re-resolved, re-hashed, and every figure checked against the payload.
@@ -20,7 +20,7 @@ class TruthGate:
     """
     Re-verifies every claim against hashed evidence.
     
-    TraceX principle: "Unprovable claims do not ship."
+    Core principle: "Unprovable claims do not ship."
     """
     
     def __init__(self, evidence_chain: EvidenceChain):
@@ -132,7 +132,7 @@ class TruthGate:
         """
         Verify a specific numerical claim against evidence.
         
-        This is the "arithmetic catches lies" check from TraceX.
+        This is the "arithmetic catches lies" check for factual verification.
         
         Args:
             claimed_value: The number being claimed

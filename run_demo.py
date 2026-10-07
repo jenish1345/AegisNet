@@ -33,7 +33,7 @@ def check_health():
     print(f"✅ Service: {data['service']}")
     print(f"✅ Version: {data['version']}")
     print(f"✅ Demo Mode: {data['demo_mode']}")
-    print(f"✅ TraceX Enabled: {data['tracex_enabled']}")
+    print(f"✅ [NEW_NAME] Enabled: {data.get('new_name_enabled', True)}")
     
     return response.status_code == 200
 
@@ -55,18 +55,18 @@ def run_sample_demo():
               f"(confidence: {signal['confidence_score']:.2f})")
     
     # Display evidence
-    print_section("🔗 STEP 3: EVIDENCE CORRELATION (TraceX)", 
+    print_section("🔗 STEP 3: EVIDENCE CORRELATION ([NEW_NAME])", 
                   f"Generated {len(data['evidence'])} evidence points")
     
     # Display campaigns
-    print_section("🎯 STEP 4: CAMPAIGN RECONSTRUCTION (TraceX)", 
+    print_section("🎯 STEP 4: CAMPAIGN RECONSTRUCTION ([NEW_NAME])", 
                   f"Identified {len(data['campaigns'])} potential campaign(s):")
     for i, campaign in enumerate(data['campaigns'], 1):
         print(f"  {i}. {campaign['campaign_type']} "
               f"(confidence: {campaign['confidence_score']:.2f})")
     
     # Display counter-evidence
-    print_section("⚖️ STEP 5: COUNTER-EVIDENCE CHECK (TraceX)", 
+    print_section("⚖️ STEP 5: COUNTER-EVIDENCE CHECK ([NEW_NAME])", 
                   f"Found {len(data.get('evidence', []))} counter-evidence points")
     
     # Display verification results

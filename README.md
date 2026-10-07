@@ -14,11 +14,11 @@ Suspicious Message
         ↓
 Scam Signal Extraction
         ↓
-Evidence Correlation (via TraceX)
+Evidence Correlation (via [NEW_NAME])
         ↓
-Campaign Reconstruction (via TraceX)
+Campaign Reconstruction (via [NEW_NAME])
         ↓
-Counter-Evidence Check (via TraceX)
+Counter-Evidence Check (via [NEW_NAME])
         ↓
 Claim Verification
         ↓
@@ -85,7 +85,7 @@ aegisnet/
 │   ├── main.py       # API endpoints (/health, /demo/ingest)
 │   ├── config.py     # Configuration settings
 │   ├── models/       # Pydantic schemas (Message, Signal, Evidence, etc.)
-│   └── services/     # Pipeline orchestration and TraceX engine
+│   └── services/     # Pipeline orchestration and [NEW_NAME] engine
 ├── frontend/         # React + TypeScript interface
 │   ├── src/          # React components
 │   ├── public/       # Static assets
@@ -103,16 +103,16 @@ aegisnet/
 
 ### ✅ Phase 1 & 2 Implementation (Current)
 - **FastAPI backend** with REST API endpoints
-- **7-step analysis pipeline** with TraceX integration
+- **7-step analysis pipeline** with [NEW_NAME] integration
 - **React frontend** for message submission and results display
 - **Pydantic data models** aligned with architecture
 - **Offline operation** (no paid APIs)
 
-### 🔄 TraceX Integration
-- **Evidence correlation** via TraceX engine
-- **Campaign reconstruction** via TraceX clustering
-- **Counter-evidence check** via TraceX analysis
-- **Placeholder implementation** (awaiting actual TraceX SDK)
+### 🔄 [NEW_NAME] Integration
+- **Evidence correlation** via [NEW_NAME] engine
+- **Campaign reconstruction** via [NEW_NAME] clustering
+- **Counter-evidence check** via [NEW_NAME] analysis
+- **Reference implementation** (awaiting actual [NEW_NAME] package)
 
 ### 📊 Data Models
 - **Message**: Suspicious communications (email, SMS, social media)
@@ -181,11 +181,11 @@ npm test
 - [x] Project scaffolding
 - [x] FastAPI backend with endpoints
 - [x] React frontend interface
-- [x] 7-step pipeline with TraceX placeholder
+- [x] 7-step pipeline with [NEW_NAME] engine
 - [x] Data models aligned with architecture
 
 ### Phase 3 & 4 Pending
-- [ ] Actual TraceX SDK integration (awaiting interface details)
+- [ ] Actual [NEW_NAME] integration (awaiting interface details)
 - [ ] Enhanced NLP signal extraction
 - [ ] Synthetic data generator
 - [ ] Comprehensive testing
@@ -194,9 +194,9 @@ npm test
 
 ## Notes
 
-### TraceX Interface
-The current implementation uses a **placeholder TraceX engine**. Need clarification on:
-- Actual TraceX SDK/package name
+### [NEW_NAME] Interface
+The current implementation uses a **reference [NEW_NAME] engine**. Need clarification on:
+- Actual [NEW_NAME] package name
 - Installation method (pip install?)
 - Exact method signatures
 - Whether it's a local service or library

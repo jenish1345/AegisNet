@@ -2,7 +2,7 @@
 
 AegisNet is an independently initialized project for ForgeHacks Online 2026.
 
-The original TLN/TRACE X project exists separately and is not part of this repository. No source code, database, model artifacts, tests, screenshots, or documentation have been copied into this repository.
+The legacy reference platform exists separately and is not part of this repository. No source code, database, model artifacts, tests, screenshots, or documentation from legacy systems have been copied into this repository.
 
 The AegisNet source code, architecture, frontend, backend, synthetic dataset, tests, documentation, and demonstration flow are being created specifically for AegisNet.
 
