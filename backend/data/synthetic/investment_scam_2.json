@@ -1,0 +1,433 @@
+{
+  "scenario_id": "investment_scam_065b2855",
+  "scam_type": "investment_scam",
+  "name": "Cryptocurrency Investment Scam",
+  "description": "Promises high returns on fake investments",
+  "messages": [
+    {
+      "message_id": "msg_a05c3fd1",
+      "content": "Limited time opportunity Guaranteed profits, no risk Earn 500% returns in 30 days Forward to friends and family.",
+      "sender_info": {
+        "email": "team@wealthbuilder.io",
+        "name": "Sender 1",
+        "type": "suspicious"
+      },
+      "receiver_info": {
+        "email": "user@example.com",
+        "name": "Potential Victim"
+      },
+      "channel_type": "email",
+      "timestamp": "2026-09-30T17:02:19.771460",
+      "metadata": {
+        "subject": "URGENT: Action Required",
+        "priority": "high"
+      },
+      "source_hash": "hash_edd2c132"
+    },
+    {
+      "message_id": "msg_66adfde8",
+      "content": "Earn 500% returns in 30 days Limited time opportunity Thousands have already joined Please respond ASAP.",
+      "sender_info": {
+        "email": "team@wealthbuilder.io",
+        "name": "Sender 2",
+        "type": "suspicious"
+      },
+      "receiver_info": {
+        "email": "customer@gmail.com",
+        "name": "Potential Victim"
+      },
+      "channel_type": "email",
+      "timestamp": "2026-09-30T21:02:19.771460",
+      "metadata": {
+        "subject": "URGENT: Important Update",
+        "priority": "high"
+      },
+      "source_hash": "hash_c52cdee7"
+    },
+    {
+      "message_id": "msg_cc16f88e",
+      "content": "Limited time opportunity Thousands have already joined Guaranteed profits, no risk Please respond ASAP.",
+      "sender_info": {
+        "email": "team@wealthbuilder.io",
+        "name": "Sender 3",
+        "type": "suspicious"
+      },
+      "receiver_info": {
+        "email": "customer@gmail.com",
+        "name": "Potential Victim"
+      },
+      "channel_type": "email",
+      "timestamp": "2026-09-30T21:02:19.771460",
+      "metadata": {
+        "subject": "URGENT: Security Alert",
+        "priority": "high"
+      },
+      "source_hash": "hash_28f65c8e"
+    }
+  ],
+  "signals": [
+    {
+      "signal_id": "sig_3fce0b79",
+      "message_id": "msg_a05c3fd1",
+      "signal_type": "greed",
+      "confidence_score": 0.72,
+      "extracted_text": "Limited time opportunity",
+      "pattern_matched": "greed_pattern_5",
+      "position_range": {
+        "start": 0,
+        "end": 112
+      },
+      "context_window": "Limited time opportunity Guaranteed profits, no risk Earn 500% returns in 30 days Forward to friends...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771483",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_0a11132f",
+      "message_id": "msg_a05c3fd1",
+      "signal_type": "urgency",
+      "confidence_score": 0.87,
+      "extracted_text": "Thousands have already joined",
+      "pattern_matched": "urgency_pattern_3",
+      "position_range": {
+        "start": 0,
+        "end": 112
+      },
+      "context_window": "Limited time opportunity Guaranteed profits, no risk Earn 500% returns in 30 days Forward to friends...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771490",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_cdf7bc3b",
+      "message_id": "msg_66adfde8",
+      "signal_type": "greed",
+      "confidence_score": 0.74,
+      "extracted_text": "Thousands have already joined",
+      "pattern_matched": "greed_pattern_5",
+      "position_range": {
+        "start": 0,
+        "end": 104
+      },
+      "context_window": "Earn 500% returns in 30 days Limited time opportunity Thousands have already joined Please respond A...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771512",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_8c58c576",
+      "message_id": "msg_66adfde8",
+      "signal_type": "urgency",
+      "confidence_score": 0.82,
+      "extracted_text": "Thousands have already joined",
+      "pattern_matched": "urgency_pattern_4",
+      "position_range": {
+        "start": 0,
+        "end": 104
+      },
+      "context_window": "Earn 500% returns in 30 days Limited time opportunity Thousands have already joined Please respond A...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771518",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_2ff8809f",
+      "message_id": "msg_66adfde8",
+      "signal_type": "social_proof",
+      "confidence_score": 0.68,
+      "extracted_text": "Thousands have already joined",
+      "pattern_matched": "social_proof_pattern_5",
+      "position_range": {
+        "start": 0,
+        "end": 104
+      },
+      "context_window": "Earn 500% returns in 30 days Limited time opportunity Thousands have already joined Please respond A...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771524",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_77d98772",
+      "message_id": "msg_cc16f88e",
+      "signal_type": "greed",
+      "confidence_score": 0.93,
+      "extracted_text": "Earn 500% returns in 30 days",
+      "pattern_matched": "greed_pattern_3",
+      "position_range": {
+        "start": 0,
+        "end": 103
+      },
+      "context_window": "Limited time opportunity Thousands have already joined Guaranteed profits, no risk Please respond AS...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771544",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_ad76e2ef",
+      "message_id": "msg_cc16f88e",
+      "signal_type": "urgency",
+      "confidence_score": 0.79,
+      "extracted_text": "Earn 500% returns in 30 days",
+      "pattern_matched": "urgency_pattern_2",
+      "position_range": {
+        "start": 0,
+        "end": 103
+      },
+      "context_window": "Limited time opportunity Thousands have already joined Guaranteed profits, no risk Please respond AS...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771550",
+      "extraction_model": "rule_based"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_a55d87a1",
+      "evidence_type": "behavioral",
+      "content": {
+        "signal_type": "greed",
+        "signal_count": 3,
+        "signal_ids": [
+          "sig_3fce0b79",
+          "sig_cdf7bc3b",
+          "sig_77d98772"
+        ],
+        "coordination_level": "medium",
+        "analysis": "Multiple greed signals detected"
+      },
+      "source_description": "Correlation of 3 greed signals",
+      "confidence_score": 0.85,
+      "collection_timestamp": "2026-10-05T17:02:19.771558",
+      "limitations": "Synthetic data for demo purposes"
+    },
+    {
+      "evidence_id": "ev_efdd6ee7",
+      "evidence_type": "temporal",
+      "content": {
+        "signal_type": "urgency",
+        "signal_count": 3,
+        "signal_ids": [
+          "sig_0a11132f",
+          "sig_8c58c576",
+          "sig_ad76e2ef"
+        ],
+        "coordination_level": "medium",
+        "analysis": "Multiple urgency signals detected"
+      },
+      "source_description": "Correlation of 3 urgency signals",
+      "confidence_score": 0.8,
+      "collection_timestamp": "2026-10-05T17:02:19.771563",
+      "limitations": "Synthetic data for demo purposes"
+    },
+    {
+      "evidence_id": "ev_22642e46",
+      "evidence_type": "temporal",
+      "content": {
+        "signal_count": 7,
+        "time_pattern": "clustered",
+        "duration_hours": 24,
+        "analysis": "Signals detected within short time window"
+      },
+      "source_description": "Temporal pattern analysis",
+      "confidence_score": 0.75,
+      "collection_timestamp": "2026-10-05T17:02:19.771568",
+      "limitations": "Based on synthetic timestamps"
+    },
+    {
+      "evidence_id": "ev_9c624de9",
+      "evidence_type": "behavioral",
+      "content": {
+        "patterns": [
+          "high_returns",
+          "limited_time",
+          "social_proof"
+        ]
+      },
+      "source_description": "Investment Scam pattern analysis",
+      "confidence_score": 0.8,
+      "collection_timestamp": "2026-10-05T17:02:19.771575",
+      "limitations": "Pattern matching based on scam type"
+    }
+  ],
+  "campaign": {
+    "campaign_id": "camp_dc44c37f",
+    "campaign_name": "Cryptocurrency Investment Scam",
+    "campaign_type": "investment_scam",
+    "confidence_score": 0.78,
+    "estimated_scale": 54,
+    "signal_ids": [
+      "sig_3fce0b79",
+      "sig_0a11132f",
+      "sig_cdf7bc3b",
+      "sig_8c58c576",
+      "sig_2ff8809f",
+      "sig_77d98772",
+      "sig_ad76e2ef"
+    ],
+    "evidence_ids": [
+      "ev_a55d87a1",
+      "ev_efdd6ee7",
+      "ev_22642e46",
+      "ev_9c624de9"
+    ],
+    "message_ids": [
+      "msg_a05c3fd1",
+      "msg_66adfde8",
+      "msg_cc16f88e"
+    ],
+    "temporal_pattern": {
+      "duration_days": 5,
+      "frequency": "ongoing",
+      "first_seen": "2026-09-28T17:02:19.771583",
+      "last_seen": "2026-10-05T17:02:19.771584"
+    },
+    "primary_tactics": [
+      "greed",
+      "urgency",
+      "social_proof"
+    ],
+    "status": "active",
+    "reconstruction_notes": "Reconstructed from 3 messages and 7 signals",
+    "meta": {
+      "scam_type": "investment_scam",
+      "message_count": 3,
+      "signal_count": 7,
+      "evidence_count": 4
+    }
+  },
+  "verification_results": [
+    {
+      "verification_id": "ver_7624a466",
+      "claim_text": "Promises unrealistic returns",
+      "claim_source": "scam_analysis",
+      "verification_status": "inconclusive",
+      "confidence_score": 0.57,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "evidence_gaps": [
+        "More recipient data needed",
+        "Sender verification incomplete"
+      ],
+      "alternative_explanations": [
+        "Legitimate marketing",
+        "User error",
+        "System misclassification"
+      ],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    },
+    {
+      "verification_id": "ver_0169094d",
+      "claim_text": "Uses high-pressure tactics",
+      "claim_source": "scam_analysis",
+      "verification_status": "supported",
+      "confidence_score": 0.8,
+      "supporting_evidence": [
+        "ev_76558020",
+        "ev_1da1c172"
+      ],
+      "contradicting_evidence": [],
+      "evidence_gaps": [],
+      "alternative_explanations": [],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    },
+    {
+      "verification_id": "ver_bea8ab89",
+      "claim_text": "Lacks proper registration",
+      "claim_source": "scam_analysis",
+      "verification_status": "supported",
+      "confidence_score": 0.71,
+      "supporting_evidence": [
+        "ev_c23e49bf",
+        "ev_4b19c402"
+      ],
+      "contradicting_evidence": [],
+      "evidence_gaps": [],
+      "alternative_explanations": [],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    },
+    {
+      "verification_id": "ver_b4c1f7f4",
+      "claim_text": "Makes guaranteed profit claims",
+      "claim_source": "scam_analysis",
+      "verification_status": "contradicted",
+      "confidence_score": 0.4,
+      "supporting_evidence": [],
+      "contradicting_evidence": [
+        "ev_187872c3"
+      ],
+      "evidence_gaps": [],
+      "alternative_explanations": [
+        "Legitimate marketing",
+        "User error",
+        "System misclassification"
+      ],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    }
+  ],
+  "human_review_brief": {
+    "brief_id": "brief_73fe4bdf",
+    "executive_summary": "Analysis of 3 suspicious messages identified a potential Cryptocurrency Investment Scam. 7 scam signals detected across 4 evidence points. Campaign confidence: 0.78.",
+    "key_signals": [
+      {
+        "type": "greed",
+        "count": 3,
+        "average_confidence": 0.8
+      },
+      {
+        "type": "urgency",
+        "count": 3,
+        "average_confidence": 0.83
+      },
+      {
+        "type": "social_proof",
+        "count": 1,
+        "average_confidence": 0.68
+      }
+    ],
+    "campaign_analysis": {
+      "type": "investment_scam",
+      "confidence": 0.78,
+      "estimated_scale": 54,
+      "primary_tactics": [
+        "greed",
+        "urgency",
+        "social_proof"
+      ],
+      "status": "active"
+    },
+    "verification_results": [
+      {
+        "claim": "Promises unrealistic returns",
+        "status": "inconclusive",
+        "confidence": 0.57
+      },
+      {
+        "claim": "Uses high-pressure tactics",
+        "status": "supported",
+        "confidence": 0.8
+      },
+      {
+        "claim": "Lacks proper registration",
+        "status": "supported",
+        "confidence": 0.71
+      },
+      {
+        "claim": "Makes guaranteed profit claims",
+        "status": "contradicted",
+        "confidence": 0.4
+      }
+    ],
+    "confidence_assessment": {
+      "overall": 0.78,
+      "signals": 0.79,
+      "evidence": 0.8,
+      "verification": 0.62
+    },
+    "limitations_section": "LIMITATIONS:\n1. Analysis based on synthetic data for demo purposes\n2. Confidence scores are simulated\n3. Limited to predefined scam patterns\n4. No real-world validation performed\n\nETHICAL BOUNDARIES:\n- This system provides analysis only\n- Does NOT determine guilt or intent\n- Does NOT freeze accounts or block communications\n- Does NOT contact victims automatically\n- All decisions require human review",
+    "recommended_actions": [
+      "Review message metadata and sender patterns",
+      "Check against known fraud databases",
+      "Consider requesting additional context",
+      "Document findings in case management system",
+      "Escalate for senior analyst review if confidence > 0.7"
+    ],
+    "analysis_timestamp": "2026-10-05T17:02:19.771640"
+  },
+  "generated_at": "2026-10-05T17:02:19.771641"
+}

@@ -1,0 +1,10 @@
+{
+  "message": {
+    "content": "URGENT: Your Social Security number has been suspended due to suspicious activity. Call immediately at 1-800-123-4567 to reactivate or your benefits will be terminated. This is your final warning.",
+    "sender_info": {"name": "SSA Security Dept", "phone": "1-800-123-4567"},
+    "receiver_info": {"name": "Beneficiary"},
+    "channel_type": "sms",
+    "metadata": {"priority": "high"}
+  },
+  "include_synthetic_context": true
+}

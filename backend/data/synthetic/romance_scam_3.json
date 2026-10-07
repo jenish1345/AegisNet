@@ -1,0 +1,436 @@
+{
+  "scenario_id": "romance_scam_14d9e83d",
+  "scam_type": "romance_scam",
+  "name": "Romance Scam",
+  "description": "Builds emotional connection for financial gain",
+  "messages": [
+    {
+      "message_id": "msg_e70b2700",
+      "content": "You're the only one I can trust Our connection is special I need your help with an emergency This is a confidential communication.",
+      "sender_info": {
+        "email": "david.smith@personal.com",
+        "name": "Sender 1",
+        "type": "suspicious"
+      },
+      "receiver_info": {
+        "email": "client@outlook.com",
+        "name": "Potential Victim"
+      },
+      "channel_type": "email",
+      "timestamp": "2026-09-29T17:02:19.771647",
+      "metadata": {
+        "subject": "URGENT: Important Update",
+        "priority": "high"
+      },
+      "source_hash": "hash_a815e24b"
+    },
+    {
+      "message_id": "msg_efe6b0bc",
+      "content": "Our connection is special You're the only one I can trust I need your help with an emergency Don't miss this opportunity.",
+      "sender_info": {
+        "email": "sarah.connor@mail.com",
+        "name": "Sender 2",
+        "type": "suspicious"
+      },
+      "receiver_info": {
+        "email": "customer@gmail.com",
+        "name": "Potential Victim"
+      },
+      "channel_type": "email",
+      "timestamp": "2026-09-29T18:02:19.771647",
+      "metadata": {
+        "subject": "URGENT: Important Update",
+        "priority": "high"
+      },
+      "source_hash": "hash_af34ebda"
+    },
+    {
+      "message_id": "msg_1fea82cf",
+      "content": "I'll pay you back as soon as I can You're the only one I can trust Our connection is special Forward to friends and family.",
+      "sender_info": {
+        "email": "john.doe@example.com",
+        "name": "Sender 3",
+        "type": "suspicious"
+      },
+      "receiver_info": {
+        "email": "client@outlook.com",
+        "name": "Potential Victim"
+      },
+      "channel_type": "email",
+      "timestamp": "2026-09-29T21:02:19.771647",
+      "metadata": {
+        "subject": "URGENT: Important Update",
+        "priority": "high"
+      },
+      "source_hash": "hash_edaaa727"
+    }
+  ],
+  "signals": [
+    {
+      "signal_id": "sig_c4e59cf9",
+      "message_id": "msg_e70b2700",
+      "signal_type": "social_proof",
+      "confidence_score": 0.7,
+      "extracted_text": "I'll pay you back as soon as I can",
+      "pattern_matched": "social_proof_pattern_4",
+      "position_range": {
+        "start": 0,
+        "end": 130
+      },
+      "context_window": "You're the only one I can trust Our connection is special I need your help with an emergency This is...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771668",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_b0072c01",
+      "message_id": "msg_e70b2700",
+      "signal_type": "reciprocity",
+      "confidence_score": 0.68,
+      "extracted_text": "I'll pay you back as soon as I can",
+      "pattern_matched": "reciprocity_pattern_3",
+      "position_range": {
+        "start": 0,
+        "end": 130
+      },
+      "context_window": "You're the only one I can trust Our connection is special I need your help with an emergency This is...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771674",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_b86a2f1a",
+      "message_id": "msg_e70b2700",
+      "signal_type": "urgency",
+      "confidence_score": 0.92,
+      "extracted_text": "I'll pay you back as soon as I can",
+      "pattern_matched": "urgency_pattern_4",
+      "position_range": {
+        "start": 0,
+        "end": 130
+      },
+      "context_window": "You're the only one I can trust Our connection is special I need your help with an emergency This is...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771680",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_95847c52",
+      "message_id": "msg_efe6b0bc",
+      "signal_type": "social_proof",
+      "confidence_score": 0.64,
+      "extracted_text": "Our connection is special",
+      "pattern_matched": "social_proof_pattern_2",
+      "position_range": {
+        "start": 0,
+        "end": 121
+      },
+      "context_window": "Our connection is special You're the only one I can trust I need your help with an emergency Don't m...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771700",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_167d6f72",
+      "message_id": "msg_efe6b0bc",
+      "signal_type": "reciprocity",
+      "confidence_score": 0.81,
+      "extracted_text": "I need your help with an emergency",
+      "pattern_matched": "reciprocity_pattern_5",
+      "position_range": {
+        "start": 0,
+        "end": 121
+      },
+      "context_window": "Our connection is special You're the only one I can trust I need your help with an emergency Don't m...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771707",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_85503893",
+      "message_id": "msg_1fea82cf",
+      "signal_type": "social_proof",
+      "confidence_score": 0.85,
+      "extracted_text": "I'll pay you back as soon as I can",
+      "pattern_matched": "social_proof_pattern_1",
+      "position_range": {
+        "start": 0,
+        "end": 123
+      },
+      "context_window": "I'll pay you back as soon as I can You're the only one I can trust Our connection is special Forward...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771739",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_ecbc1546",
+      "message_id": "msg_1fea82cf",
+      "signal_type": "reciprocity",
+      "confidence_score": 0.86,
+      "extracted_text": "I need your help with an emergency",
+      "pattern_matched": "reciprocity_pattern_1",
+      "position_range": {
+        "start": 0,
+        "end": 123
+      },
+      "context_window": "I'll pay you back as soon as I can You're the only one I can trust Our connection is special Forward...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771745",
+      "extraction_model": "rule_based"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_7ce3df0d",
+      "evidence_type": "network",
+      "content": {
+        "signal_type": "social_proof",
+        "signal_count": 3,
+        "signal_ids": [
+          "sig_c4e59cf9",
+          "sig_95847c52",
+          "sig_85503893"
+        ],
+        "coordination_level": "medium",
+        "analysis": "Multiple social_proof signals detected"
+      },
+      "source_description": "Correlation of 3 social_proof signals",
+      "confidence_score": 0.72,
+      "collection_timestamp": "2026-10-05T17:02:19.771754",
+      "limitations": "Synthetic data for demo purposes"
+    },
+    {
+      "evidence_id": "ev_3ae95bb6",
+      "evidence_type": "behavioral",
+      "content": {
+        "signal_type": "reciprocity",
+        "signal_count": 3,
+        "signal_ids": [
+          "sig_b0072c01",
+          "sig_167d6f72",
+          "sig_ecbc1546"
+        ],
+        "coordination_level": "medium",
+        "analysis": "Multiple reciprocity signals detected"
+      },
+      "source_description": "Correlation of 3 reciprocity signals",
+      "confidence_score": 0.86,
+      "collection_timestamp": "2026-10-05T17:02:19.771760",
+      "limitations": "Synthetic data for demo purposes"
+    },
+    {
+      "evidence_id": "ev_224a759b",
+      "evidence_type": "temporal",
+      "content": {
+        "signal_count": 7,
+        "time_pattern": "clustered",
+        "duration_hours": 24,
+        "analysis": "Signals detected within short time window"
+      },
+      "source_description": "Temporal pattern analysis",
+      "confidence_score": 0.75,
+      "collection_timestamp": "2026-10-05T17:02:19.771765",
+      "limitations": "Based on synthetic timestamps"
+    },
+    {
+      "evidence_id": "ev_670a06a8",
+      "evidence_type": "network",
+      "content": {
+        "patterns": [
+          "emotional_appeals",
+          "trust_building",
+          "emergency_requests"
+        ]
+      },
+      "source_description": "Romance Scam pattern analysis",
+      "confidence_score": 0.8,
+      "collection_timestamp": "2026-10-05T17:02:19.771770",
+      "limitations": "Pattern matching based on scam type"
+    }
+  ],
+  "campaign": {
+    "campaign_id": "camp_037446a4",
+    "campaign_name": "Romance Scam",
+    "campaign_type": "romance_scam",
+    "confidence_score": 0.88,
+    "estimated_scale": 231,
+    "signal_ids": [
+      "sig_c4e59cf9",
+      "sig_b0072c01",
+      "sig_b86a2f1a",
+      "sig_95847c52",
+      "sig_167d6f72",
+      "sig_85503893",
+      "sig_ecbc1546"
+    ],
+    "evidence_ids": [
+      "ev_7ce3df0d",
+      "ev_3ae95bb6",
+      "ev_224a759b",
+      "ev_670a06a8"
+    ],
+    "message_ids": [
+      "msg_e70b2700",
+      "msg_efe6b0bc",
+      "msg_1fea82cf"
+    ],
+    "temporal_pattern": {
+      "duration_days": 2,
+      "frequency": "ongoing",
+      "first_seen": "2026-09-28T17:02:19.771778",
+      "last_seen": "2026-10-05T17:02:19.771779"
+    },
+    "primary_tactics": [
+      "social_proof",
+      "reciprocity",
+      "urgency"
+    ],
+    "status": "active",
+    "reconstruction_notes": "Reconstructed from 3 messages and 7 signals",
+    "meta": {
+      "scam_type": "romance_scam",
+      "message_count": 3,
+      "signal_count": 7,
+      "evidence_count": 4
+    }
+  },
+  "verification_results": [
+    {
+      "verification_id": "ver_beb69bde",
+      "claim_text": "Builds emotional connection quickly",
+      "claim_source": "scam_analysis",
+      "verification_status": "supported",
+      "confidence_score": 0.92,
+      "supporting_evidence": [
+        "ev_43c93c0c"
+      ],
+      "contradicting_evidence": [],
+      "evidence_gaps": [],
+      "alternative_explanations": [],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    },
+    {
+      "verification_id": "ver_adb9c15c",
+      "claim_text": "Requests financial assistance",
+      "claim_source": "scam_analysis",
+      "verification_status": "inconclusive",
+      "confidence_score": 0.49,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "evidence_gaps": [
+        "More recipient data needed",
+        "Sender verification incomplete"
+      ],
+      "alternative_explanations": [
+        "Legitimate marketing",
+        "User error",
+        "System misclassification"
+      ],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    },
+    {
+      "verification_id": "ver_5a30b838",
+      "claim_text": "Uses fabricated personal stories",
+      "claim_source": "scam_analysis",
+      "verification_status": "contradicted",
+      "confidence_score": 0.31,
+      "supporting_evidence": [],
+      "contradicting_evidence": [
+        "ev_1782ddfe",
+        "ev_65eea3e5"
+      ],
+      "evidence_gaps": [],
+      "alternative_explanations": [
+        "Legitimate marketing",
+        "User error",
+        "System misclassification"
+      ],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    },
+    {
+      "verification_id": "ver_357f2e1c",
+      "claim_text": "Avoids in-person meetings",
+      "claim_source": "scam_analysis",
+      "verification_status": "contradicted",
+      "confidence_score": 0.61,
+      "supporting_evidence": [],
+      "contradicting_evidence": [
+        "ev_cb8fcf27"
+      ],
+      "evidence_gaps": [],
+      "alternative_explanations": [
+        "Legitimate marketing",
+        "User error",
+        "System misclassification"
+      ],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    }
+  ],
+  "human_review_brief": {
+    "brief_id": "brief_f6049180",
+    "executive_summary": "Analysis of 3 suspicious messages identified a potential Romance Scam. 7 scam signals detected across 4 evidence points. Campaign confidence: 0.88.",
+    "key_signals": [
+      {
+        "type": "reciprocity",
+        "count": 3,
+        "average_confidence": 0.78
+      },
+      {
+        "type": "urgency",
+        "count": 1,
+        "average_confidence": 0.92
+      },
+      {
+        "type": "social_proof",
+        "count": 3,
+        "average_confidence": 0.73
+      }
+    ],
+    "campaign_analysis": {
+      "type": "romance_scam",
+      "confidence": 0.88,
+      "estimated_scale": 231,
+      "primary_tactics": [
+        "social_proof",
+        "reciprocity",
+        "urgency"
+      ],
+      "status": "active"
+    },
+    "verification_results": [
+      {
+        "claim": "Builds emotional connection quickly",
+        "status": "supported",
+        "confidence": 0.92
+      },
+      {
+        "claim": "Requests financial assistance",
+        "status": "inconclusive",
+        "confidence": 0.49
+      },
+      {
+        "claim": "Uses fabricated personal stories",
+        "status": "contradicted",
+        "confidence": 0.31
+      },
+      {
+        "claim": "Avoids in-person meetings",
+        "status": "contradicted",
+        "confidence": 0.61
+      }
+    ],
+    "confidence_assessment": {
+      "overall": 0.88,
+      "signals": 0.78,
+      "evidence": 0.78,
+      "verification": 0.58
+    },
+    "limitations_section": "LIMITATIONS:\n1. Analysis based on synthetic data for demo purposes\n2. Confidence scores are simulated\n3. Limited to predefined scam patterns\n4. No real-world validation performed\n\nETHICAL BOUNDARIES:\n- This system provides analysis only\n- Does NOT determine guilt or intent\n- Does NOT freeze accounts or block communications\n- Does NOT contact victims automatically\n- All decisions require human review",
+    "recommended_actions": [
+      "Review message metadata and sender patterns",
+      "Check against known fraud databases",
+      "Consider requesting additional context",
+      "Document findings in case management system",
+      "Escalate for senior analyst review if confidence > 0.7"
+    ],
+    "analysis_timestamp": "2026-10-05T17:02:19.771830"
+  },
+  "generated_at": "2026-10-05T17:02:19.771831"
+}

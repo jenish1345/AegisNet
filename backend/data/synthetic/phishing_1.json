@@ -1,0 +1,469 @@
+{
+  "scenario_id": "phishing_6b8ca1d8",
+  "scam_type": "phishing",
+  "name": "Bank Phishing Scam",
+  "description": "Impersonates banks to steal credentials",
+  "messages": [
+    {
+      "message_id": "msg_847e435d",
+      "content": "Security alert: unusual login detected Your account has been compromised Immediate action required Don't miss this opportunity.",
+      "sender_info": {
+        "email": "security@yourbank.com",
+        "name": "Sender 1",
+        "type": "suspicious"
+      },
+      "receiver_info": {
+        "email": "client@outlook.com",
+        "name": "Potential Victim"
+      },
+      "channel_type": "email",
+      "timestamp": "2026-09-30T17:02:19.771031",
+      "metadata": {
+        "subject": "URGENT: Important Update",
+        "priority": "high"
+      },
+      "source_hash": "hash_6a623e8d"
+    },
+    {
+      "message_id": "msg_92aa7e52",
+      "content": "Immediate action required Security alert: unusual login detected Your account has been compromised Forward to friends and family.",
+      "sender_info": {
+        "email": "security@yourbank.com",
+        "name": "Sender 2",
+        "type": "suspicious"
+      },
+      "receiver_info": {
+        "email": "customer@gmail.com",
+        "name": "Potential Victim"
+      },
+      "channel_type": "email",
+      "timestamp": "2026-09-30T18:02:19.771031",
+      "metadata": {
+        "subject": "URGENT: Action Required",
+        "priority": "high"
+      },
+      "source_hash": "hash_9a2c345d"
+    },
+    {
+      "message_id": "msg_a8b784ff",
+      "content": "Click here to verify your identity Your account has been compromised Security alert: unusual login detected Don't miss this opportunity.",
+      "sender_info": {
+        "email": "support@paypal-security.com",
+        "name": "Sender 3",
+        "type": "suspicious"
+      },
+      "receiver_info": {
+        "email": "user@example.com",
+        "name": "Potential Victim"
+      },
+      "channel_type": "email",
+      "timestamp": "2026-09-30T23:02:19.771031",
+      "metadata": {
+        "subject": "URGENT: Important Update",
+        "priority": "high"
+      },
+      "source_hash": "hash_a225a656"
+    }
+  ],
+  "signals": [
+    {
+      "signal_id": "sig_c9271012",
+      "message_id": "msg_847e435d",
+      "signal_type": "urgency",
+      "confidence_score": 0.7,
+      "extracted_text": "Your account has been compromised",
+      "pattern_matched": "urgency_pattern_1",
+      "position_range": {
+        "start": 0,
+        "end": 127
+      },
+      "context_window": "Security alert: unusual login detected Your account has been compromised Immediate action required D...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771254",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_899a5232",
+      "message_id": "msg_847e435d",
+      "signal_type": "authority",
+      "confidence_score": 0.78,
+      "extracted_text": "Click here to verify your identity",
+      "pattern_matched": "authority_pattern_4",
+      "position_range": {
+        "start": 0,
+        "end": 127
+      },
+      "context_window": "Security alert: unusual login detected Your account has been compromised Immediate action required D...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771262",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_1a52eab7",
+      "message_id": "msg_847e435d",
+      "signal_type": "fear",
+      "confidence_score": 0.72,
+      "extracted_text": "Your account has been compromised",
+      "pattern_matched": "fear_pattern_1",
+      "position_range": {
+        "start": 0,
+        "end": 127
+      },
+      "context_window": "Security alert: unusual login detected Your account has been compromised Immediate action required D...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771269",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_a4a8065f",
+      "message_id": "msg_92aa7e52",
+      "signal_type": "urgency",
+      "confidence_score": 0.68,
+      "extracted_text": "Your account has been compromised",
+      "pattern_matched": "urgency_pattern_4",
+      "position_range": {
+        "start": 0,
+        "end": 129
+      },
+      "context_window": "Immediate action required Security alert: unusual login detected Your account has been compromised F...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771293",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_21afe703",
+      "message_id": "msg_92aa7e52",
+      "signal_type": "authority",
+      "confidence_score": 0.87,
+      "extracted_text": "Immediate action required",
+      "pattern_matched": "authority_pattern_4",
+      "position_range": {
+        "start": 0,
+        "end": 129
+      },
+      "context_window": "Immediate action required Security alert: unusual login detected Your account has been compromised F...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771299",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_2224deaf",
+      "message_id": "msg_92aa7e52",
+      "signal_type": "fear",
+      "confidence_score": 0.84,
+      "extracted_text": "Click here to verify your identity",
+      "pattern_matched": "fear_pattern_3",
+      "position_range": {
+        "start": 0,
+        "end": 129
+      },
+      "context_window": "Immediate action required Security alert: unusual login detected Your account has been compromised F...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771305",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_bd0590e4",
+      "message_id": "msg_a8b784ff",
+      "signal_type": "urgency",
+      "confidence_score": 0.87,
+      "extracted_text": "Your account has been compromised",
+      "pattern_matched": "urgency_pattern_1",
+      "position_range": {
+        "start": 0,
+        "end": 136
+      },
+      "context_window": "Click here to verify your identity Your account has been compromised Security alert: unusual login d...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771326",
+      "extraction_model": "rule_based"
+    },
+    {
+      "signal_id": "sig_b1b15678",
+      "message_id": "msg_a8b784ff",
+      "signal_type": "authority",
+      "confidence_score": 0.87,
+      "extracted_text": "Security alert: unusual login detected",
+      "pattern_matched": "authority_pattern_4",
+      "position_range": {
+        "start": 0,
+        "end": 136
+      },
+      "context_window": "Click here to verify your identity Your account has been compromised Security alert: unusual login d...",
+      "extraction_timestamp": "2026-10-05T17:02:19.771332",
+      "extraction_model": "rule_based"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_55487578",
+      "evidence_type": "temporal",
+      "content": {
+        "signal_type": "urgency",
+        "signal_count": 3,
+        "signal_ids": [
+          "sig_c9271012",
+          "sig_a4a8065f",
+          "sig_bd0590e4"
+        ],
+        "coordination_level": "medium",
+        "analysis": "Multiple urgency signals detected"
+      },
+      "source_description": "Correlation of 3 urgency signals",
+      "confidence_score": 0.89,
+      "collection_timestamp": "2026-10-05T17:02:19.771342",
+      "limitations": "Synthetic data for demo purposes"
+    },
+    {
+      "evidence_id": "ev_6af07d01",
+      "evidence_type": "linguistic",
+      "content": {
+        "signal_type": "authority",
+        "signal_count": 3,
+        "signal_ids": [
+          "sig_899a5232",
+          "sig_21afe703",
+          "sig_b1b15678"
+        ],
+        "coordination_level": "medium",
+        "analysis": "Multiple authority signals detected"
+      },
+      "source_description": "Correlation of 3 authority signals",
+      "confidence_score": 0.8,
+      "collection_timestamp": "2026-10-05T17:02:19.771349",
+      "limitations": "Synthetic data for demo purposes"
+    },
+    {
+      "evidence_id": "ev_7faf1d89",
+      "evidence_type": "behavioral",
+      "content": {
+        "signal_type": "fear",
+        "signal_count": 2,
+        "signal_ids": [
+          "sig_1a52eab7",
+          "sig_2224deaf"
+        ],
+        "coordination_level": "medium",
+        "analysis": "Multiple fear signals detected"
+      },
+      "source_description": "Correlation of 2 fear signals",
+      "confidence_score": 0.75,
+      "collection_timestamp": "2026-10-05T17:02:19.771354",
+      "limitations": "Synthetic data for demo purposes"
+    },
+    {
+      "evidence_id": "ev_6360cd84",
+      "evidence_type": "temporal",
+      "content": {
+        "signal_count": 8,
+        "time_pattern": "clustered",
+        "duration_hours": 24,
+        "analysis": "Signals detected within short time window"
+      },
+      "source_description": "Temporal pattern analysis",
+      "confidence_score": 0.75,
+      "collection_timestamp": "2026-10-05T17:02:19.771359",
+      "limitations": "Based on synthetic timestamps"
+    },
+    {
+      "evidence_id": "ev_ae773178",
+      "evidence_type": "linguistic",
+      "content": {
+        "patterns": [
+          "banking_terms",
+          "security_phrases",
+          "urgency_markers"
+        ]
+      },
+      "source_description": "Phishing pattern analysis",
+      "confidence_score": 0.8,
+      "collection_timestamp": "2026-10-05T17:02:19.771367",
+      "limitations": "Pattern matching based on scam type"
+    }
+  ],
+  "campaign": {
+    "campaign_id": "camp_89989ed3",
+    "campaign_name": "Bank Phishing Scam",
+    "campaign_type": "phishing",
+    "confidence_score": 0.83,
+    "estimated_scale": 159,
+    "signal_ids": [
+      "sig_c9271012",
+      "sig_899a5232",
+      "sig_1a52eab7",
+      "sig_a4a8065f",
+      "sig_21afe703",
+      "sig_2224deaf",
+      "sig_bd0590e4",
+      "sig_b1b15678"
+    ],
+    "evidence_ids": [
+      "ev_55487578",
+      "ev_6af07d01",
+      "ev_7faf1d89",
+      "ev_6360cd84",
+      "ev_ae773178"
+    ],
+    "message_ids": [
+      "msg_847e435d",
+      "msg_92aa7e52",
+      "msg_a8b784ff"
+    ],
+    "temporal_pattern": {
+      "duration_days": 13,
+      "frequency": "ongoing",
+      "first_seen": "2026-09-28T17:02:19.771378",
+      "last_seen": "2026-10-05T17:02:19.771380"
+    },
+    "primary_tactics": [
+      "urgency",
+      "authority",
+      "fear"
+    ],
+    "status": "active",
+    "reconstruction_notes": "Reconstructed from 3 messages and 8 signals",
+    "meta": {
+      "scam_type": "phishing",
+      "message_count": 3,
+      "signal_count": 8,
+      "evidence_count": 5
+    }
+  },
+  "verification_results": [
+    {
+      "verification_id": "ver_af03350d",
+      "claim_text": "Message impersonates a legitimate bank",
+      "claim_source": "scam_analysis",
+      "verification_status": "contradicted",
+      "confidence_score": 0.61,
+      "supporting_evidence": [],
+      "contradicting_evidence": [
+        "ev_ad17cf9d",
+        "ev_2a6f6008"
+      ],
+      "evidence_gaps": [],
+      "alternative_explanations": [
+        "Legitimate marketing",
+        "User error",
+        "System misclassification"
+      ],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    },
+    {
+      "verification_id": "ver_0a035c5c",
+      "claim_text": "Contains urgent security warnings",
+      "claim_source": "scam_analysis",
+      "verification_status": "supported",
+      "confidence_score": 0.82,
+      "supporting_evidence": [
+        "ev_3f9ce4eb",
+        "ev_4e3c8349"
+      ],
+      "contradicting_evidence": [],
+      "evidence_gaps": [],
+      "alternative_explanations": [],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    },
+    {
+      "verification_id": "ver_1fc6d3ba",
+      "claim_text": "Requests sensitive information",
+      "claim_source": "scam_analysis",
+      "verification_status": "supported",
+      "confidence_score": 0.91,
+      "supporting_evidence": [
+        "ev_933c637b",
+        "ev_5db8fc41",
+        "ev_3124106f"
+      ],
+      "contradicting_evidence": [],
+      "evidence_gaps": [],
+      "alternative_explanations": [],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    },
+    {
+      "verification_id": "ver_5c47b8ef",
+      "claim_text": "Uses deceptive links",
+      "claim_source": "scam_analysis",
+      "verification_status": "contradicted",
+      "confidence_score": 0.3,
+      "supporting_evidence": [],
+      "contradicting_evidence": [
+        "ev_dedcb2f5"
+      ],
+      "evidence_gaps": [],
+      "alternative_explanations": [
+        "Legitimate marketing",
+        "User error",
+        "System misclassification"
+      ],
+      "verification_method": "rule_based_analysis",
+      "limitations": "Synthetic verification for demo"
+    }
+  ],
+  "human_review_brief": {
+    "brief_id": "brief_de6409a4",
+    "executive_summary": "Analysis of 3 suspicious messages identified a potential Bank Phishing Scam. 8 scam signals detected across 5 evidence points. Campaign confidence: 0.83.",
+    "key_signals": [
+      {
+        "type": "authority",
+        "count": 3,
+        "average_confidence": 0.84
+      },
+      {
+        "type": "urgency",
+        "count": 3,
+        "average_confidence": 0.75
+      },
+      {
+        "type": "fear",
+        "count": 2,
+        "average_confidence": 0.78
+      }
+    ],
+    "campaign_analysis": {
+      "type": "phishing",
+      "confidence": 0.83,
+      "estimated_scale": 159,
+      "primary_tactics": [
+        "urgency",
+        "authority",
+        "fear"
+      ],
+      "status": "active"
+    },
+    "verification_results": [
+      {
+        "claim": "Message impersonates a legitimate bank",
+        "status": "contradicted",
+        "confidence": 0.61
+      },
+      {
+        "claim": "Contains urgent security warnings",
+        "status": "supported",
+        "confidence": 0.82
+      },
+      {
+        "claim": "Requests sensitive information",
+        "status": "supported",
+        "confidence": 0.91
+      },
+      {
+        "claim": "Uses deceptive links",
+        "status": "contradicted",
+        "confidence": 0.3
+      }
+    ],
+    "confidence_assessment": {
+      "overall": 0.83,
+      "signals": 0.79,
+      "evidence": 0.8,
+      "verification": 0.66
+    },
+    "limitations_section": "LIMITATIONS:\n1. Analysis based on synthetic data for demo purposes\n2. Confidence scores are simulated\n3. Limited to predefined scam patterns\n4. No real-world validation performed\n\nETHICAL BOUNDARIES:\n- This system provides analysis only\n- Does NOT determine guilt or intent\n- Does NOT freeze accounts or block communications\n- Does NOT contact victims automatically\n- All decisions require human review",
+    "recommended_actions": [
+      "Review message metadata and sender patterns",
+      "Check against known fraud databases",
+      "Consider requesting additional context",
+      "Document findings in case management system",
+      "Escalate for senior analyst review if confidence > 0.7"
+    ],
+    "analysis_timestamp": "2026-10-05T17:02:19.771452"
+  },
+  "generated_at": "2026-10-05T17:02:19.771453"
+}
