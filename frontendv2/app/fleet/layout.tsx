@@ -3,8 +3,8 @@ import SidebarNav from "./SidebarNav";
 import styles from "./fleet.module.css";
 
 export const metadata: Metadata = {
-  title: "Autophagy — Fleet Console",
-  description: "Behavioral waste detection and on-chain efficiency reputation for agent fleets.",
+  title: "AegisNet — Intelligence & Fleet Console",
+  description: "Evidence-grounded scam intelligence and temporal correlation for threat networks.",
 };
 
 const NAV_ITEMS = [
@@ -20,7 +20,7 @@ export default function FleetLayout({ children }: { children: React.ReactNode })
     <div className={styles.shell}>
       <aside className={styles.sidebar}>
         <a className={styles.brand} href="/fleet/overview">
-          <span className={styles.brandMark}>Autophagy</span>
+          <span className={styles.brandMark}>AegisNet</span>
           <span className={styles.brandSub}>Fleet Console</span>
         </a>
 
@@ -29,7 +29,7 @@ export default function FleetLayout({ children }: { children: React.ReactNode })
         <div className={styles.scopeIndicator}>
           watching namespace
           <br />
-          <strong>autophagy</strong>
+          <strong>aegisnet // :8000</strong>
         </div>
       </aside>
 

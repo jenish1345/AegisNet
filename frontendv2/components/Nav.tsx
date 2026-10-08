@@ -69,35 +69,43 @@ export default function Nav() {
                 <div className="nav_menu-inner">
                   <ul className="nav_menu-ul is-bg">
                     <li className="nav_menu-li">
-                      <Link href="/#overview" className="nav-link w-inline-block">
-                        <span className="nav-link_span">Overview</span>
-                      </Link>
-                    </li>
-                    <li className="nav_menu-li">
-                      <Link href="/demo" className="nav-link w-inline-block">
-                        <span className="nav-link_span">Live Demo</span>
-                      </Link>
-                    </li>
-                    <li className="nav_menu-li">
                       <Link href="/#pipeline" className="nav-link w-inline-block">
-                        <span className="nav-link_span">7-Step Pipeline</span>
+                        <span className="nav-link_span">Pipeline</span>
                       </Link>
                     </li>
                     <li className="nav_menu-li">
-                      <Link href="/#tracex" className="nav-link w-inline-block">
-                        <span className="nav-link_span">TraceX Engine</span>
+                      <Link href="/fleet/overview" className="nav-link w-inline-block">
+                        <span className="nav-link_span">Registry</span>
                       </Link>
                     </li>
                     <li className="nav_menu-li">
-                      <Link href="/#architecture" className="nav-link w-inline-block">
-                        <span className="nav-link_span">Architecture</span>
+                      <Link href="/fleet/overview" className="nav-link w-inline-block">
+                        <span className="nav-link_span">Incidents</span>
                       </Link>
                     </li>
                     <li className="nav_menu-li">
-                      <Link href="/aegisnet/overview" className="nav-link w-inline-block">
-                        <span className="nav-link_span" style={{ color: "#38bdf8" }}>
-                          Console ↗
-                        </span>
+                      <a
+                        href="http://localhost:8000/docs"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="nav-link w-inline-block"
+                      >
+                        <span className="nav-link_span">Docs</span>
+                      </a>
+                    </li>
+                    <li className="nav_menu-li">
+                      <a
+                        href="https://github.com/jenish1345/AegisNet"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="nav-link w-inline-block"
+                      >
+                        <span className="nav-link_span">GitHub</span>
+                      </a>
+                    </li>
+                    <li className="nav_menu-li">
+                      <Link href="/fleet/overview" className="nav-link w-inline-block">
+                        <span className="nav-link_span">Dashboard</span>
                       </Link>
                     </li>
                   </ul>
@@ -107,23 +115,32 @@ export default function Nav() {
               {/* Top Action Buttons */}
               <div className="nav_button-wrapper" style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
                 <a
-                  href="http://localhost:8000/docs"
+                  href="https://github.com/jenish1345/AegisNet"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="nav-link w-inline-block"
                   style={{ textDecoration: "none" }}
                 >
-                  <span className="nav-link_span">API Docs</span>
+                  <span className="nav-link_span">GitHub</span>
                 </a>
                 <Link
-                  href="/demo"
-                  className="button-066 w-inline-block"
-                  style={{ textDecoration: "none" }}
+                  href="/fleet/overview"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    backgroundColor: "#facc15",
+                    color: "#000000",
+                    fontWeight: 700,
+                    fontSize: "0.88rem",
+                    padding: "0.6rem 1.4rem",
+                    borderRadius: "9999px",
+                    textDecoration: "none",
+                    boxShadow: "0 4px 15px rgba(250, 204, 21, 0.35)",
+                    transition: "all 0.18s ease",
+                  }}
                 >
-                  <span className="button-066__bg" />
-                  <span className="button-066__inner">
-                    <span className="button-066__text">Run Demo</span>
-                  </span>
+                  Open Dashboard
                 </Link>
               </div>
             </div>
