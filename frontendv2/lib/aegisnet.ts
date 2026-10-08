@@ -227,7 +227,7 @@ export function verificationStatusLabel(status: VerificationStatus | string): st
   return labels[status] ?? status;
 }
 
-// Pre-defined benchmark scenarios matching frontend/page_content (11)/index.html
+// Pre-defined benchmark scenarios matching AegisNet core benchmarks
 export const SCENARIOS: Record<string, { label: string; message: MessageCreate }> = {
   bank: {
     label: "🏦 Urgent Bank Phishing",

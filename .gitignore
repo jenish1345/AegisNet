@@ -18,8 +18,5 @@ frontendv2/.compare/
 
 # Node / Frontend
 node_modules/
-frontend/node_modules/
 dist/
-frontend/dist/
 .DS_Store
-
