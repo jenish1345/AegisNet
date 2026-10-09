@@ -9,9 +9,15 @@ backend/venv/
 .pytest_cache/
 *.db
 
+.venv/
+.antigravity/
+frontendv2/node_modules/
+frontendv2/.next/
+frontendv2/.vercel/
+frontendv2/.compare/
+
 # Node / Frontend
 node_modules/
-frontend/node_modules/
 dist/
-frontend/dist/
 .DS_Store
+REFINAGE/

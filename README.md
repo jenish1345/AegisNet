@@ -58,8 +58,8 @@ API Docs: http://localhost:8000/docs
 ### 2. Frontend Setup
 
 ```bash
-# In a new terminal, navigate to frontend
-cd frontend
+# In a new terminal, navigate to frontendv2
+cd frontendv2
 
 # Install dependencies
 npm install
@@ -68,35 +68,40 @@ npm install
 npm run dev
 ```
 
-Frontend will be available at: http://localhost:5173
+Frontend will be available at: http://localhost:3000  
+- **Landing Page**: http://localhost:3000  
+- **Live Demo**: http://localhost:3000/demo  
+- **Analyst Console**: http://localhost:3000/aegisnet/overview  
 
 ### 3. Run the Demo
 
-1. Open http://localhost:5173 in your browser
-2. Enter a suspicious message or use the sample message
+1. Open http://localhost:3000/demo in your browser
+2. Select a benchmark scenario or enter a custom suspicious message
 3. Click "Analyze Message"
-4. View the 7-step analysis results and Human Review Brief
+4. View the real-time 7-step analysis results and Human Review Brief
 
 ## Project Structure
 
 ```
 aegisnet/
 ├── backend/           # FastAPI backend with 7-step pipeline
-│   ├── main.py       # API endpoints (/health, /demo/ingest)
-│   ├── config.py     # Configuration settings
-│   ├── models/       # Pydantic schemas (Message, Signal, Evidence, etc.)
-│   └── services/     # Pipeline orchestration and [NEW_NAME] engine
-├── frontend/         # React + TypeScript interface
-│   ├── src/          # React components
-│   ├── public/       # Static assets
-│   └── package.json  # Frontend dependencies
-├── docs/             # Planning documents
+│   ├── main.py        # API endpoints (/health, /demo/ingest)
+│   ├── config.py      # Configuration settings
+│   ├── models/        # Pydantic schemas (Message, Signal, Evidence, etc.)
+│   └── services/      # Pipeline orchestration and [NEW_NAME] engine
+├── frontendv2/        # Next.js 15 + React 19 + TypeScript frontend
+│   ├── app/           # App Router pages (/demo, /aegisnet/*, /fleet/*)
+│   ├── components/    # Classical cyberpunk & analyst UI components
+│   ├── lib/           # API client, types, and mock data
+│   ├── public/        # Static assets, fonts, and scripts
+│   └── package.json   # Frontend dependencies
+├── docs/              # Planning documents
 │   ├── ARCHITECTURE.md
 │   ├── IMPLEMENTATION_PLAN.md
 │   └── DATA_MODEL.md
-├── data/             # Synthetic data storage
-├── tests/            # Unit and integration tests
-└── README.md         # This file
+├── data/              # Synthetic data storage
+├── tests/             # Unit and integration tests
+└── README.md          # This file
 ```
 
 ## Key Features
@@ -104,7 +109,7 @@ aegisnet/
 ### ✅ Phase 1 & 2 Implementation (Current)
 - **FastAPI backend** with REST API endpoints
 - **7-step analysis pipeline** with [NEW_NAME] integration
-- **React frontend** for message submission and results display
+- **Next.js 15 frontend** (`frontendv2`) with classical cyberpunk aesthetic, dedicated live demo, and analyst dashboard
 - **Pydantic data models** aligned with architecture
 - **Offline operation** (no paid APIs)
 
@@ -159,7 +164,7 @@ uvicorn main:app --reload
 
 ### Frontend Development
 ```bash
-cd frontend
+cd frontendv2
 npm install
 npm run dev
 ```
@@ -170,9 +175,9 @@ npm run dev
 cd backend
 pytest tests/
 
-# Frontend tests
-cd frontend
-npm test
+# Frontend build verification
+cd frontendv2
+npm run build
 ```
 
 ## Next Steps
@@ -180,8 +185,8 @@ npm test
 ### Phase 1 & 2 Complete ✅
 - [x] Project scaffolding
 - [x] FastAPI backend with endpoints
-- [x] React frontend interface
-- [x] 7-step pipeline with [NEW_NAME] engine
+- [x] Next.js 15 frontend interface (`frontendv2`)
+- [x] 7-step pipeline with TraceX engine
 - [x] Data models aligned with architecture
 
 ### Phase 3 & 4 Pending
