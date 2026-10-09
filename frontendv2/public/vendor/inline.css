@@ -1298,17 +1298,22 @@ body.act2 .tabs-ui {
   position: absolute;
   inset: 0;
 }
+.threejs > .container-large.is-relative {
+  height: 100%;
+}
 .tab-title {
   position: absolute;
-  left: 2.6rem;
-  bottom: 100px;
+  left: 3.5rem;
+  bottom: 125px;
   margin: 0;
+  z-index: 6;
 }
 .tab-title__line {
   display: block;
   overflow: hidden;
-  padding: 0.04em 0.06em 0.2em;
-  margin: -2em -0.06em -0.2em;
+  padding: 0 0.1em;
+  margin: 0;
+  line-height: 1.05;
 }
 .tab-title__inner {
   display: block;
@@ -1316,34 +1321,35 @@ body.act2 .tabs-ui {
   will-change: transform;
   transform: translateY(130%);
   color: #fff;
-  font-family: var(--font-family--headings);;
+  font-family: var(--font-family--headings);
   font-weight: 500;
-  font-size: 90px;
-  line-height: 140%;
-  letter-spacing: -0.01em;
+  font-size: clamp(50px, 4.8vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 .tab-copy {
   position: absolute;
   right: 4rem;
-  bottom: 100px;
-  width: 22rem;
-  max-width: 32%;
+  bottom: 125px;
+  width: 24rem;
+  max-width: 34%;
   opacity: 0;
   will-change: transform, opacity;
   pointer-events: auto;
+  z-index: 6;
 }
 .tab-content.in-progress .tab-copy {
-  z-index: 5;
+  z-index: 6;
 }
 .tab-desc {
   color: #fff;
-  font-family: var(--font-family--headings);;
-  font-size: 20px;   /* was 16px */
+  font-family: var(--font-family--headings);
+  font-size: clamp(16px, 1.2vw, 19px);
   font-weight: 400;
-  line-height: 22px;   /* was 18px */
+  line-height: 1.45;
 }
 .tab-btn {
-  margin-top: 28px;
+  margin-top: 24px;
 }
 .tabs-nav {
   position: absolute;
