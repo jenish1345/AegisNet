@@ -121,7 +121,7 @@ export default function DemoPage() {
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
-                    gap: "8px",
+                    gap: "10px",
                     background: "rgba(6, 182, 212, 0.12)",
                     border: "1px solid rgba(6, 182, 212, 0.35)",
                     color: "#06b6d4",
@@ -134,7 +134,12 @@ export default function DemoPage() {
                     marginBottom: "1.25rem",
                   }}
                 >
-                  ⚡ AEGISNET ORACLE • LIVE SCAM INTELLIGENCE
+                  <img
+                    src="/assets/logo.png"
+                    alt="AegisNet Shield"
+                    style={{ width: "20px", height: "20px", objectFit: "contain", filter: "drop-shadow(0 0 6px rgba(250, 204, 21, 0.5))" }}
+                  />
+                  AEGISNET ORACLE • LIVE SCAM INTELLIGENCE
                 </div>
 
                 {/* Classical Greek Typography Title */}

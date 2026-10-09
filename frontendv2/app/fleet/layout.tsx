@@ -19,9 +19,16 @@ export default function FleetLayout({ children }: { children: React.ReactNode })
   return (
     <div className={styles.shell}>
       <aside className={styles.sidebar}>
-        <a className={styles.brand} href="/fleet/overview">
-          <span className={styles.brandMark}>AegisNet</span>
-          <span className={styles.brandSub}>Fleet Console</span>
+        <a className={styles.brand} href="/fleet/overview" style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "10px" }}>
+          <img
+            src="/assets/logo.png"
+            alt="AegisNet Shield"
+            style={{ width: "32px", height: "32px", objectFit: "contain", filter: "drop-shadow(0 0 8px rgba(250, 204, 21, 0.45))" }}
+          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <span className={styles.brandMark}>AegisNet</span>
+            <span className={styles.brandSub}>Fleet Console</span>
+          </div>
         </a>
 
         <SidebarNav items={NAV_ITEMS} />
