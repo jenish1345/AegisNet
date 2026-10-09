@@ -46,21 +46,16 @@ export default function Nav() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                <div
+                <img
+                  src="/assets/logo.png"
+                  alt="AegisNet Logo"
                   style={{
-                    width: "36px",
                     height: "36px",
-                    background: "linear-gradient(135deg, #06b6d4, #8b5cf6)",
-                    borderRadius: "9px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "1.15rem",
-                    boxShadow: "0 0 15px rgba(6, 182, 212, 0.35)",
+                    width: "auto",
+                    objectFit: "contain",
+                    filter: "drop-shadow(0 0 12px rgba(250, 204, 21, 0.45))",
                   }}
-                >
-                  🛡️
-                </div>
+                />
                 <span>AegisNet</span>
               </Link>
 

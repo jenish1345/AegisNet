@@ -20,9 +20,21 @@ export default function AegisNetLayout({ children }: { children: React.ReactNode
   return (
     <div className={styles.shell}>
       <aside className={styles.sidebar}>
-        <Link className={styles.brand} href="/aegisnet/overview">
-          <span className={styles.brandMark}>🛡️ AegisNet</span>
-          <span className={styles.brandSub}>Intelligence Console</span>
+        <Link className={styles.brand} href="/aegisnet/overview" style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "10px" }}>
+          <img
+            src="/assets/logo.png"
+            alt="AegisNet Logo"
+            style={{
+              width: "32px",
+              height: "32px",
+              objectFit: "contain",
+              filter: "drop-shadow(0 0 8px rgba(250, 204, 21, 0.45))",
+            }}
+          />
+          <div>
+            <div className={styles.brandMark}>AegisNet</div>
+            <div className={styles.brandSub}>Intelligence Console</div>
+          </div>
         </Link>
 
         <AegisNav items={NAV_ITEMS} />

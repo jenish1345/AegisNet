@@ -10,6 +10,42 @@ export default function Hero() {
           </div>
           <div className="container-large is-relative" style={{ height: "100%" }}>
             <div className="hero-behind">
+              <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.25rem" }}>
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    padding: "6px 16px",
+                    borderRadius: "9999px",
+                    background: "rgba(250, 204, 21, 0.08)",
+                    border: "1px solid rgba(250, 204, 21, 0.28)",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  <img
+                    src="/assets/logo.png"
+                    alt="AegisNet Emblem"
+                    style={{
+                      height: "22px",
+                      width: "auto",
+                      objectFit: "contain",
+                      filter: "drop-shadow(0 0 8px rgba(250, 204, 21, 0.5))",
+                    }}
+                  />
+                  <span
+                    style={{
+                      color: "#facc15",
+                      fontSize: "0.82rem",
+                      fontWeight: 600,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    AegisNet Scam Intelligence
+                  </span>
+                </div>
+              </div>
               <h1 className="heading_group-h1">
                 <div className="hero-title">
                   <div className="hero-clip hero-clip--l">

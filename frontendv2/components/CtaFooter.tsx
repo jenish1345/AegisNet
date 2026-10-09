@@ -8,6 +8,12 @@ export default function CtaFooter() {
               <div className="cta-track">
                 <div className="parent-relative">
                   <div className="footer_logo-wrap-2 hyperxdb-footer-mark">
+                    <img
+                      src="/assets/logo.png"
+                      alt="AegisNet Shield"
+                      className="hyperxdb-footer-mark_icon"
+                      style={{ height: "0.72em", width: "auto", objectFit: "contain", verticalAlign: "middle", marginRight: "0.15em" }}
+                    />
                     <span className="hyperxdb-footer-mark_text">
                       {"Aegis"}
                       <span className="hyperxdb-logo_x">N</span>
@@ -15,6 +21,12 @@ export default function CtaFooter() {
                     </span>
                   </div>
                   <div className="footer_logo-wrap-2 is-above hyperxdb-footer-mark">
+                    <img
+                      src="/assets/logo.png"
+                      alt="AegisNet Shield"
+                      className="hyperxdb-footer-mark_icon"
+                      style={{ height: "0.72em", width: "auto", objectFit: "contain", verticalAlign: "middle", marginRight: "0.15em" }}
+                    />
                     <span className="hyperxdb-footer-mark_text">
                       {"Aegis"}
                       <span className="hyperxdb-logo_x">N</span>
@@ -99,8 +111,17 @@ export default function CtaFooter() {
         }}
       >
         <div className="container-large">
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", marginBottom: "0.6rem" }}>
-            <span style={{ fontSize: "1.25rem" }}>🛡️</span>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", marginBottom: "0.6rem" }}>
+            <img
+              src="/assets/logo.png"
+              alt="AegisNet Shield"
+              style={{
+                width: "28px",
+                height: "28px",
+                objectFit: "contain",
+                filter: "drop-shadow(0 0 8px rgba(250, 204, 21, 0.45))",
+              }}
+            />
             <strong style={{ color: "#f8fafc", fontSize: "1.1rem" }}>
               AegisNet — Evidence-Grounded AI for Scam Network Intelligence
             </strong>
